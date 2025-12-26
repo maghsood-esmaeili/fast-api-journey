@@ -46,8 +46,9 @@ async def create_mongo_db_user(user: MongoUser):
         **user.model_dump()
     )
     return user_response
+
 @app.get("/mongodb-get_user/{user_id}")
-async def get_user(user_id:str):
+async def get_user(user_id:str)-> MongoResponse:
     object_id = None
     if ObjectId.is_valid(user_id):
         object_id = ObjectId(user_id)
