@@ -47,7 +47,7 @@ async def create_mongo_db_user(user: MongoUser):
     )
     return user_response
 
-@app.get("/mongodb-get_user/{user_id}")
+@app.get("/mongodb-get-user/{user_id}")
 async def get_user(user_id:str)-> MongoResponse:
     object_id = None
     if ObjectId.is_valid(user_id):
